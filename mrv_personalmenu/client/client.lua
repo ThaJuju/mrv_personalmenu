@@ -62,6 +62,12 @@ function startAnim(lib, anim)
 	end)
 end
 
+function startAttitude(lib, anim)
+	ESX.Streaming.RequestAnimSet(lib, function()
+		SetPedMovementClipset(PlayerPedId(), anim, true)
+	end)
+end
+
 function notification(title, subject, msg)
 
 	local mugshot, mugshotStr = ESX.Game.GetPedMugshot(GetPlayerPed(-1))
