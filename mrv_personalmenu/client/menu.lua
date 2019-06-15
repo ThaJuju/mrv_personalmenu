@@ -10,6 +10,8 @@ Citizen.CreateThread(function()
 
 	WarMenu.CreateSubMenu('optionsmenu', 'personalmenu', 'Options et Informations')
 
+	WarMenu.CreateSubMenu('clothesmenu', 'personalmenu', 'Mes vetements')
+
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("personalmenu", 44, 177, 198, 1000)
 
@@ -25,6 +27,9 @@ Citizen.CreateThread(function()
 	WarMenu.SetMenuBackgroundColor("diversmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("diversmenu", 44, 177, 198, 1000)
 
+	WarMenu.SetMenuBackgroundColor("clothesmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 44, 177, 198, 1000)
+
 	WarMenu.SetSubTitle("personalmenu", "Menu Personnel (BETA)")
 
 	while true do
@@ -34,6 +39,8 @@ Citizen.CreateThread(function()
 			if WarMenu.MenuButton('Mes papiers', 'papersmenu') then
 			end
 			if WarMenu.MenuButton('Mini GPS', 'gpsmenu') then
+			end
+			if WarMenu.MenuButton('Mes vêtements', 'clothesmenu') then
 			end
 			if WarMenu.MenuButton('Divers', 'diversmenu') then
 			end
@@ -156,6 +163,29 @@ Citizen.CreateThread(function()
 			end
 
 			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('clothesmenu') then
+
+			if WarMenu.Button('Retirer son t-shirt') then
+				TriggerEvent('mrv_personalmenu:removeshirt')
+			end
+
+			if WarMenu.Button('Retirer son pantalon') then
+				TriggerEvent('mrv_personalmenu:removepants')
+			end
+
+			if WarMenu.Button('Retirer ses chaussures') then
+				TriggerEvent('mrv_personalmenu:removeshoes')
+			end
+
+			if WarMenu.Button('Remettre ses vêtements') then
+				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
+				TriggerEvent('skinchanger:loadSkin', skin)
+				end)
+			end
+
+			WarMenu.Display()
+
 		end
 
 		Citizen.Wait(0)
