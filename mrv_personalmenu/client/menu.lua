@@ -6,9 +6,9 @@ Citizen.CreateThread(function()
 	
 	WarMenu.CreateSubMenu('gpsmenu', 'personalmenu', 'Mini GPS')
 
-	WarMenu.CreateSubMenu('optionsmenu', 'personalmenu', 'Options')
-
 	WarMenu.CreateSubMenu('diversmenu', 'personalmenu', 'Divers')
+
+	WarMenu.CreateSubMenu('optionsmenu', 'personalmenu', 'Options et Informations')
 
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("personalmenu", 44, 177, 198, 1000)
@@ -35,9 +35,9 @@ Citizen.CreateThread(function()
 			end
 			if WarMenu.MenuButton('Mini GPS', 'gpsmenu') then
 			end
-			if WarMenu.MenuButton('Options', 'optionsmenu') then
-			end
 			if WarMenu.MenuButton('Divers', 'diversmenu') then
+			end
+			if WarMenu.MenuButton('Options et Informations', 'optionsmenu') then
 			end
 
 			WarMenu.Display()
@@ -148,6 +148,11 @@ Citizen.CreateThread(function()
 			
 			if WarMenu.Button('Afficher Coordonnées') then
 				ShowCoords()
+			end
+
+			if WarMenu.Button('Mon ID') then
+				local id = GetPlayerFromServerId(source)
+				notification("Information", "Votre ~g~ID~s~ est", id)
 			end
 
 			WarMenu.Display()
