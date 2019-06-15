@@ -2,7 +2,7 @@ This is the MRV_PERSONALMENU (Beta)
 
 # Présentation (FR)
 
-- Touche d'ouverture du menu : M
+- Touche d'ouverture du menu : virgule (,)
 
 - Menu personnel avec différentes choses, vous pouvez regarder vos papiers d'identité (permis de conduire, permis de port d'arme et carte d'identité). 
 
@@ -25,7 +25,7 @@ This is the MRV_PERSONALMENU (Beta)
 
 # Presentation (EN)
 
-- Key for open the menu : M
+- Key for open the menu : (,)
 
 - Personal menu with different things, you can see your identity papers (driver's license, firearms license and ID card).
 
