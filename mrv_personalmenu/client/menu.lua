@@ -12,6 +12,7 @@ Citizen.CreateThread(function()
 
 	WarMenu.CreateSubMenu('clothesmenu', 'personalmenu', 'Mes vetements')
 
+
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("personalmenu", 44, 177, 198, 1000)
 
