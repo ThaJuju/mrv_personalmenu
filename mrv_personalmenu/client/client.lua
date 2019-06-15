@@ -82,3 +82,39 @@ function IsInVehicle()
 end
 
 -- Fin fonctions 
+
+-- Events
+
+RegisterNetEvent('mrv_personalmenu:removeshirt')
+AddEventHandler('mrv_personalmenu:removeshirt', function()
+	TriggerEvent('skinchanger:getSkin', function(skin)
+	
+	local clothesSkin = {
+		['tshirt_1'] = 15, ['tshirt_2'] = 0,
+		['torso_1'] = 15, ['torso_2'] = 0,
+		['arms'] = 15, ['arms_2'] = 0
+}
+		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+	end)
+end)
+RegisterNetEvent('mrv_personalmenu:removepants')
+AddEventHandler('mrv_personalmenu:removepants', function()
+	TriggerEvent('skinchanger:getSkin', function(skin)
+	
+    local clothesSkin = {
+		['pants_1'] = 18, ['pants_2'] = 0
+}
+		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+	end)
+end)
+
+RegisterNetEvent('mrv_personalmenu:removeshoes')
+AddEventHandler('mrv_personalmenu:removeshoes', function()
+	TriggerEvent('skinchanger:getSkin', function(skin)
+	
+    local clothesSkin = {
+		['shoes_1'] = 34, ['shoes_2'] = 0
+}
+		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+	end)
+end)
