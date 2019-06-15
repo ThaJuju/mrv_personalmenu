@@ -152,7 +152,7 @@ Citizen.CreateThread(function()
 
 			if WarMenu.Button('Mon ID') then
 				local id = GetPlayerFromServerId(source)
-				notification("Information", "Votre ~g~ID~s~ est", id)
+				ESX.Scaleform.ShowFreemodeMessage("Votre ID", id, 5)
 			end
 
 			WarMenu.Display()
