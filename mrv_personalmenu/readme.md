@@ -4,6 +4,7 @@ Important :
 
 - Si vous voulez modifier le menu et le release, merci de me demander mon autorisation sur discord ! (FR)
 - If you want to modify the menu and the press release, please ask me for my permission on discord (EN)
+MRV#0001
 
 # Présentation (FR)
 
