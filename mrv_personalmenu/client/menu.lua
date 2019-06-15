@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
 
-	WarMenu.CreateMenu('personalmenu', 'MRV Personal Menu')
+	WarMenu.CreateMenu('personalmenu', '' .. GetPlayerName(player))
 	
 	WarMenu.CreateSubMenu('papersmenu', 'personalmenu', 'Mes papiers')
 	
@@ -11,6 +11,25 @@ Citizen.CreateThread(function()
 	WarMenu.CreateSubMenu('optionsmenu', 'personalmenu', 'Options et Informations')
 
 	WarMenu.CreateSubMenu('clothesmenu', 'personalmenu', 'Mes vetements')
+
+
+	WarMenu.CreateSubMenu('animmenu', 'personalmenu', 'Animations')
+
+	WarMenu.CreateSubMenu('festivesmenu', 'personalmenu', 'Festives')
+
+	WarMenu.CreateSubMenu('salutationmenu', 'personalmenu', 'Salutation')
+
+	WarMenu.CreateSubMenu('workmenu', 'personalmenu', 'Travail')
+
+	WarMenu.CreateSubMenu('humorsmenu', 'personalmenu', 'Humeurs')
+
+	WarMenu.CreateSubMenu('sportsmenu', 'personalmenu', 'Sport')
+
+	WarMenu.CreateSubMenu('miscmenu', 'personalmenu', 'Divers')
+
+	WarMenu.CreateSubMenu('attitudemmenu', 'personalmenu', 'Attitudes')
+
+	WarMenu.CreateSubMenu('pornmenu', 'personalmenu', 'PEGI 21')
 
 
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
@@ -31,7 +50,34 @@ Citizen.CreateThread(function()
 	WarMenu.SetMenuBackgroundColor("clothesmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("clothesmenu", 44, 177, 198, 1000)
 
-	WarMenu.SetSubTitle("personalmenu", "Menu Personnel (BETA)")
+	WarMenu.SetMenuBackgroundColor("animmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("animmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("festivesmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("salutationmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("workmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("workmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("humorsmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("sportsmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("miscmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("attitudemmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetMenuBackgroundColor("pornmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 44, 177, 198, 1000)
+
+	WarMenu.SetSubTitle("personalmenu", "Menu Personnel")
 
 	while true do
 
@@ -43,9 +89,469 @@ Citizen.CreateThread(function()
 			end
 			if WarMenu.MenuButton('Mes vêtements', 'clothesmenu') then
 			end
+			if WarMenu.MenuButton('Animations', 'animmenu') then
+			end
 			if WarMenu.MenuButton('Divers', 'diversmenu') then
 			end
 			if WarMenu.MenuButton('Options et Informations', 'optionsmenu') then
+			end
+
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('animmenu') then
+
+            if WarMenu.MenuButton('stopmenu', 'Stop Animation') then
+            end
+			if WarMenu.MenuButton('Festives', 'festivesmenu') then
+			end
+			if WarMenu.MenuButton('Salutation', 'salutationmenu') then
+			end
+			if WarMenu.MenuButton('Travail', 'workmenu') then
+			end
+			if WarMenu.MenuButton('Humeurs', 'humorsmenu') then
+			end
+			if WarMenu.MenuButton('Sports', 'sportsmenu') then
+			end
+			if WarMenu.MenuButton('Divers', 'miscmenu') then
+			end
+			if WarMenu.MenuButton('Attitudes', 'attitudemmenu') then
+			end
+			if WarMenu.MenuButton('PEGI 18', 'pornmenu') then
+			end
+
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('festivesmenu') then
+			
+			if WarMenu.Button('Fumer une cigarette') then
+				startScenario("WORLD_HUMAN_SMOKING")
+			end
+
+			if WarMenu.Button('Jouer de la musique') then
+				startScenario("WORLD_HUMAN_MUSICIAN")
+			end
+
+			if WarMenu.Button('DJ') then
+				startAnim("anim@mp_player_intcelebrationmale@dj", "dj")
+			end
+
+			if WarMenu.Button('Bière en zik') then
+				startScenario("WORLD_HUMAN_PARTYING")
+			end
+
+			if WarMenu.Button('Air Guitar') then
+				startAnim("anim@mp_player_intcelebrationmale@air_guitar", "air_guitar")
+			end
+
+			if WarMenu.Button('Air Shagging') then
+				startAnim("anim@mp_player_intcelebrationfemale@air_shagging", "air_shagging")
+			end
+
+			if WarMenu.Button('Rock roll') then
+				startAnim("mp_player_int_upperrock", "mp_player_int_rock")
+			end
+
+			if WarMenu.Button('Bourré sur place') then
+				startAnim("amb@world_human_bum_standing@drunk@idle_a", "idle_a")
+			end
+
+			if WarMenu.Button('Vomir en voiture') then
+				startAnim("oddjobs@taxi@tie", "vomit_outside")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('salutationmenu') then
+			
+			if WarMenu.Button('Saluer') then
+				startAnim("gestures@m@standing@casual", "gesture_hello")
+			end
+
+			if WarMenu.Button('Serrer la main') then
+				startAnim("mp_common", "givetake1_a")
+			end
+
+			if WarMenu.Button('Tchek') then
+				startAnim("mp_ped_interaction", "handshake_guy_a")
+			end
+
+			if WarMenu.Button('Salut bandit') then
+				startAnim("mp_ped_interaction", "hugs_guy_a")
+			end
+
+			if WarMenu.Button('Salut Militaire') then
+				startAnim("mp_player_int_uppersalute", "mp_player_int_salute")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('workmenu') then
+			
+			if WarMenu.Button('Suspect : se rendre à la police') then
+				startAnim("random@arrests@busted", "idle_c")
+			end
+
+			if WarMenu.Button('Pêcheur') then
+				startScenario("world_human_stand_fishing")
+			end
+
+			if WarMenu.Button('Police : enquêter') then
+				startAnim("amb@code_human_police_investigate@idle_b", "idle_b")
+			end
+
+			if WarMenu.Button('Police : parler à la radio') then
+				startAnim("random@arrests", "generic_radio_chatter")
+			end
+
+			if WarMenu.Button('Salut Militaire') then
+				startScenario("world_human_stand_fishing")
+			end
+
+			if WarMenu.Button('Police : circulation') then
+				startScenario("WORLD_HUMAN_CAR_PARK_ATTENDANT")
+			end
+
+			if WarMenu.Button('Police : jumelles') then
+				startScenario("WORLD_HUMAN_BINOCULARS")
+			end
+
+			if WarMenu.Button('Agriculture : récolter') then
+				startScenario("world_human_gardener_plant")
+			end
+
+			if WarMenu.Button('Dépanneur : réparer le moteur') then
+				startAnim("mini@repair", "fixing_a_ped")
+			end
+
+			if WarMenu.Button('Médecin : observer') then
+				startScenario("CODE_HUMAN_MEDIC_KNEEL")
+			end
+
+			if WarMenu.Button('Taxi : parler au client') then
+				startAnim("oddjobs@taxi@driver", "leanover_idle")
+			end
+
+			if WarMenu.Button('Taxi : donner la facture') then
+				startAnim("oddjobs@taxi@cyi", "std_hand_off_ps_passenger")
+			end
+
+			if WarMenu.Button('Epicier : donner les courses') then
+				startAnim("mp_am_hold_up", "purchase_beerbox_shopkeeper")
+			end
+
+			if WarMenu.Button('Barman : servir un shot') then
+				startAnim("mini@drinking", "shots_barman_b")
+			end
+
+			if WarMenu.Button('Journaliste : Prendre une photo') then
+				startScenario("WORLD_HUMAN_PAPARAZZI")
+			end
+
+			if WarMenu.Button('Tout métiers : Prendre des notes') then
+				startScenario("WORLD_HUMAN_CLIPBOARD")
+			end
+
+			if WarMenu.Button('Tout métiers : Coup de marteau') then
+				startScenario("WORLD_HUMAN_HAMMERING")
+			end
+
+			if WarMenu.Button('Clochard : Faire la manche') then
+				startScenario("WORLD_HUMAN_BUM_FREEWAY")
+			end
+
+			if WarMenu.Button('Clochard : Faire la statue') then
+				startScenario("WORLD_HUMAN_HUMAN_STATUE")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('humorsmenu') then
+			
+			if WarMenu.Button('Féliciter') then
+				startScenario("WORLD_HUMAN_CHEERING")
+			end
+
+			if WarMenu.Button('Super') then
+				startAnim("mp_action", "thanks_male_06")
+			end
+
+			if WarMenu.Button('Toi') then
+				startAnim("gestures@m@standing@casual", "gesture_point")
+			end
+            if WarMenu.Button('Viens') then
+				startAnim("gestures@m@standing@casual", "gesture_come_here_soft")
+			end
+
+			if WarMenu.Button('Keskya ?') then
+				startAnim("gestures@m@standing@casual", "gesture_bring_it_on")
+			end
+
+			if WarMenu.Button('A moi') then
+				startAnim("gestures@m@standing@casual", "gesture_me")
+			end
+
+			if WarMenu.Button('Je le savais, putain') then
+				startAnim("anim@am_hold_up@male", "shoplift_high")
+			end
+
+			if WarMenu.Button('Etre épuisé') then
+				startAnim("amb@world_human_jog_standing@male@idle_b", "idle_d")
+			end
+
+			if WarMenu.Button('Je suis dans la merde') then
+				startAnim("amb@world_human_bum_standing@depressed@idle_a", "idle_a")
+			end
+
+			if WarMenu.Button('Facepalm') then
+				startAnim("anim@mp_player_intcelebrationmale@face_palm", "face_palm")
+			end
+
+			if WarMenu.Button('Calme-toi') then
+				startAnim("gestures@m@standing@casual", "gesture_easy_now")
+			end
+
+			if WarMenu.Button('Quest ce que jai fait ?') then
+				startAnim("oddjobs@assassinate@multi@", "react_big_variations_a")
+			end
+
+			if WarMenu.Button('Avoir peur') then
+				startAnim("amb@code_human_cower_stand@male@react_cowering", "base_right")
+			end
+
+			if WarMenu.Button('Fight ?') then
+				startAnim("anim@deathmatch_intros@unarmed", "intro_male_unarmed_e")
+			end
+
+			if WarMenu.Button('Cest pas Possible !') then
+				startAnim("gestures@m@standing@casual", "gesture_damn")
+			end
+
+			if WarMenu.Button('Enlacer') then
+				startAnim("mp_ped_interaction", "kisses_guy_a")
+			end
+
+			if WarMenu.Button('Doigt dhonneur') then
+				startAnim("mp_player_int_upperfinger", "mp_player_int_finger_01_enter")
+			end
+
+			if WarMenu.Button('Branleur') then
+				startAnim("mp_player_int_upperwank", "mp_player_int_wank_01")
+			end
+
+			if WarMenu.Button('Balle dans la tete') then
+				startAnim("mp_suicide", "pistol")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('sportsmenu') then
+			
+			if WarMenu.Button('Montrer ses muscles') then
+				startAnim("amb@world_human_muscle_flex@arms_at_side@base", "base")
+			end
+
+			if WarMenu.Button('Barre de musculation') then
+				startAnim("amb@world_human_muscle_free_weights@male@barbell@base", "base")
+			end
+
+			if WarMenu.Button('Faire des pompes') then
+				startAnim("amb@world_human_push_ups@male@base", "base")
+			end
+
+			if WarMenu.Button('Faire des abdos') then
+				startAnim("amb@world_human_sit_ups@male@base", "base")
+			end
+
+			if WarMenu.Button('Faire du yoga') then
+				startAnim("amb@world_human_yoga@male@base", "base_a")
+			end
+			
+			WarMenu.Display()
+
+	    elseif WarMenu.IsMenuOpened('miscmenu') then
+			
+			if WarMenu.Button('Boire un café') then
+				startAnim("amb@world_human_aa_coffee@idle_a", "idle_a")
+			end
+
+			if WarMenu.Button('Sasseoir') then
+				startAnim("anim@heists@prison_heistunfinished_biztarget_idle", "target_idle")
+			end
+
+			if WarMenu.Button('Attendre contre un mur') then
+				startScenario("world_human_leaning")
+			end
+
+			if WarMenu.Button('Couché sur le dos') then
+				startScenario("WORLD_HUMAN_SUNBATHE_BACK")
+			end
+
+			if WarMenu.Button('Couché sur le ventre') then
+				startScenario("WORLD_HUMAN_SUNBATHE")
+			end
+
+			if WarMenu.Button('Nettoyer quelque chose') then
+				startScenario("world_human_maid_clean")
+			end
+
+			if WarMenu.Button('Préparer à manger') then
+				startScenario("PROP_HUMAN_BBQ")
+			end
+
+			if WarMenu.Button('Position de Fouille') then
+				startAnim("mini@prostitutes@sexlow_veh", "low_car_bj_to_prop_female")
+			end
+
+			if WarMenu.Button('Prendre un selfie') then
+				startScenario("world_human_tourist_mobile")
+			end
+
+			if WarMenu.Button('Ecouter à une porte') then
+				startAnim("ini@safe_cracking", "idle_base")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('attitudemmenu') then
+			
+			if WarMenu.Button('Normal M') then
+				startAttitude("move_m@confident", "move_m@confident")
+			end
+
+			if WarMenu.Button('Normal F') then
+				startAttitude("move_f@heels@c", "move_f@heels@c")
+			end
+
+			if WarMenu.Button('Depressif') then
+				startAttitude("move_m@depressed@a", "move_m@depressed@a")
+			end
+
+			if WarMenu.Button('Depressif F') then
+				startAttitude("move_f@depressed@a", "move_f@depressed@a")
+			end
+
+			if WarMenu.Button('Business') then
+				startAttitude("move_m@business@a", "move_m@business@a")
+			end
+
+			if WarMenu.Button('Determine') then
+				startAttitude("move_m@brave@a", "move_m@brave@a")
+			end
+
+			if WarMenu.Button('Casual') then
+				startAttitude("move_m@casual@a", "move_m@casual@a")
+			end
+
+			if WarMenu.Button('Trop mange') then
+				startAttitude("move_m@fat@a", "move_m@fat@a")
+			end
+
+			if WarMenu.Button('Hipster') then
+				startAttitude("move_m@hipster@a", "move_m@hipster@a")
+			end
+
+			if WarMenu.Button('Blesse') then
+				startAttitude("move_m@injured", "move_m@injured")
+			end
+
+			if WarMenu.Button('Intimide') then
+				startAttitude("move_m@hurry@a", "move_m@hurry@a")
+			end
+
+			if WarMenu.Button('Hobo') then
+				startAttitude("move_m@hobo@a", "move_m@hobo@a")
+			end
+
+			if WarMenu.Button('Malheureux') then
+				startAttitude("move_m@sad@a", "move_m@sad@a")
+			end
+
+			if WarMenu.Button('Muscle') then
+				startAttitude("move_m@muscle@a", "move_m@muscle@a")
+			end
+
+			if WarMenu.Button('Choc') then
+				startAttitude("move_m@shocked@a", "move_m@shocked@a")
+			end
+
+			if WarMenu.Button('Sombre') then
+				startAttitude("move_m@shadyped@a", "move_m@shadyped@a")
+			end
+
+			if WarMenu.Button('Fatigue') then
+				startAttitude("move_m@buzzed", "move_m@buzzed")
+			end
+
+			if WarMenu.Button('Pressee') then
+				startAttitude("move_m@hurry_butch@a", "move_m@hurry_butch@a")
+			end
+
+			if WarMenu.Button('Fier') then
+				startAttitude("move_m@money", "move_m@money")
+			end
+
+			if WarMenu.Button('Petite course') then
+				startAttitude("move_m@quick", "move_m@quick")
+			end
+
+			if WarMenu.Button('Mangeuse dhomme') then
+				startAttitude("move_f@maneater", "move_f@maneater")
+			end
+
+			if WarMenu.Button('Impertinent') then
+				startAttitude("move_f@sassy", "move_f@sassy")
+			end
+
+			if WarMenu.Button('Arrogante') then
+				startAttitude("move_f@arrogant@a", "move_f@arrogant@a")
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('pornmenu') then
+			
+			if WarMenu.Button('Homme se faire su*** en voiture') then
+				startAnim("oddjobs@towing", "m_blow_job_loop")
+			end
+
+			if WarMenu.Button('Femme faire une gaterie en voiture') then
+				startAnim("oddjobs@towing", "f_blow_job_loop")
+			end
+
+			if WarMenu.Button('Homme bais** en voiture') then
+				startAnim("mini@prostitutes@sexlow_veh", "low_car_sex_loop_player")
+			end
+
+			if WarMenu.Button('Femme bais** en voiture') then
+				startAnim("mini@prostitutes@sexlow_veh", "low_car_sex_loop_female")
+			end
+
+			if WarMenu.Button('Se gratter les couilles') then
+				startAnim("mp_player_int_uppergrab_crotch", "mp_player_int_grab_crotch")
+			end
+
+			if WarMenu.Button('Faire du charme') then
+				startAnim("mini@strip_club@idles@stripper", "stripper_idle_02")
+			end
+
+			if WarMenu.Button('Pose michto') then
+				startScenario("WORLD_HUMAN_PROSTITUTE_HIGH_CLASS")
+			end
+
+			if WarMenu.Button('Montrer sa poitrine') then
+				startAnim("mini@strip_club@backroom@", "stripper_b_backroom_idle_b")
+			end
+
+			if WarMenu.Button('Strip Tease 1') then
+				startAnim("mini@strip_club@lap_dance@ld_girl_a_song_a_p1", "ld_girl_a_song_a_p1_f")
+			end
+
+			if WarMenu.Button('Strip Tease 2') then
+				startAnim("mini@strip_club@private_dance@part2", "priv_dance_p2")
+			end
+
+			if WarMenu.Button('Stip Tease au sol') then
+				startAnim("mini@strip_club@private_dance@part3", "priv_dance_p3")
 			end
 
 			WarMenu.Display()
