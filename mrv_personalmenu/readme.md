@@ -20,12 +20,15 @@ MRV#0001
 
 - (Divers) : Possibilité de fumer et de se suicider
 
+- Les animations sont également disponibles (merci à @MRDIKORYTB)
+ 
 - Le menu est en beta, il sera mis à jour régulièrement et de nouvelles choses seront rajoutées !
 
 - Pour le bon fonctionnement du menu vous aurez besoin de ces deux choses : 
 
 - WarMenu : [https://forum.fivem.net/t/release-0-9-8-final-warmenu-lua-menu-framework/41249]
 - jsfour-idcard : [https://github.com/jonassvensson4/jsfour-idcard]
+- Skin changer : [https://github.com/ESX-Org/skinchanger]
 
 - Si vous avez des problèmes avec le menu, merci de me demander en ami et de me contacter sur discord : MRV#0001
 
@@ -43,12 +46,15 @@ MRV#0001
 
 - (Miscellaneous): Possibility of smoking and committing suicide
 
+- Animations are also available (thanks to @MRDIKORYTB)
+
 - The menu is in beta, it will be updated regularly and new things will be added!
 
 - For the proper functioning of the menu you will need these two things:
 
 - WarMenu : [https://forum.fivem.net/t/release-0-9-8-final-warmenu-lua-menu-framework/41249]
 - jsfour-idcard : [https://github.com/jonassvensson4/jsfour-idcard]
+- Skin changer : [https://github.com/ESX-Org/skinchanger]
 
 - If you have problems with the menu, please ask me as a friend and contact me on discord: MRV # 0001
 
