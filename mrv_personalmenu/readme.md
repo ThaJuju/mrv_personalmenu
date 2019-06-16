@@ -24,7 +24,7 @@ MRV#0001
  
 - Le menu est en beta, il sera mis à jour régulièrement et de nouvelles choses seront rajoutées !
 
-- Pour le bon fonctionnement du menu vous aurez besoin de ces deux choses : 
+- Pour le bon fonctionnement du menu vous aurez besoin de ces trois choses : 
 
 - WarMenu : [https://forum.fivem.net/t/release-0-9-8-final-warmenu-lua-menu-framework/41249]
 - jsfour-idcard : [https://github.com/jonassvensson4/jsfour-idcard]
@@ -50,7 +50,7 @@ MRV#0001
 
 - The menu is in beta, it will be updated regularly and new things will be added!
 
-- For the proper functioning of the menu you will need these two things:
+- For the proper functioning of the menu you will need these three things:
 
 - WarMenu : [https://forum.fivem.net/t/release-0-9-8-final-warmenu-lua-menu-framework/41249]
 - jsfour-idcard : [https://github.com/jonassvensson4/jsfour-idcard]
