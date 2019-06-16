@@ -33,49 +33,49 @@ Citizen.CreateThread(function()
 
 
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("personalmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("personalmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("papersmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("papersmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("gpsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("gpsmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("optionsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("optionsmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("diversmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("diversmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("clothesmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("clothesmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("animmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("animmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("festivesmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("festivesmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("salutationmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("salutationmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("workmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("workmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("humorsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("humorsmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("sportsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("sportsmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("miscmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("miscmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("attitudemmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("attitudemmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("pornmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("pornmenu", 44, 177, 198, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 251, 255, 0, 1000)
 
 	WarMenu.SetSubTitle("personalmenu", "Menu Personnel")
 
@@ -665,9 +665,9 @@ Citizen.CreateThread(function()
 			end
 
 			if WarMenu.Button('Mon ID') then
-				local id = GetPlayerFromServerId(source)
-				ESX.Scaleform.ShowFreemodeMessage("Votre ID", id, 5)
-			end
+                        local id = GetPlayerServerId(player)
+			notification("Information", "Votre ~g~ID~s~: " ..id)
+            end
 
 			WarMenu.Display()
 
