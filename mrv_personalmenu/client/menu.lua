@@ -12,6 +12,8 @@ Citizen.CreateThread(function()
 
 	WarMenu.CreateSubMenu('clothesmenu', 'personalmenu', 'Mes vetements')
 
+	WarMenu.CreateSubMenu('vehmenu', 'personalmenu', 'Vehicule')
+
 
 	WarMenu.CreateSubMenu('animmenu', 'personalmenu', 'Animations')
 
@@ -50,6 +52,9 @@ Citizen.CreateThread(function()
 	WarMenu.SetMenuBackgroundColor("clothesmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("clothesmenu", 251, 255, 0, 1000)
 
+	WarMenu.SetMenuBackgroundColor("vehmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 251, 255, 0, 1000)
+
 	WarMenu.SetMenuBackgroundColor("animmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("animmenu", 251, 255, 0, 1000)
 
@@ -85,9 +90,11 @@ Citizen.CreateThread(function()
 		
 			if WarMenu.MenuButton('Mes papiers', 'papersmenu') then
 			end
+			if WarMenu.MenuButton('Mes vêtements', 'clothesmenu') then
+			end
 			if WarMenu.MenuButton('Mini GPS', 'gpsmenu') then
 			end
-			if WarMenu.MenuButton('Mes vêtements', 'clothesmenu') then
+			if WarMenu.MenuButton('Véhicule', 'vehmenu') then
 			end
 			if WarMenu.MenuButton('Animations', 'animmenu') then
 			end
@@ -665,8 +672,8 @@ Citizen.CreateThread(function()
 			end
 
 			if WarMenu.Button('Mon ID') then
-                        local id = GetPlayerServerId(player)
-			notification("Information", "Votre ~g~ID~s~: " ..id)
+                local id = GetPlayerServerId(player)
+				notification("Information", "Votre ~g~ID~s~: " ..id)
             end
 
 			WarMenu.Display()
@@ -689,6 +696,45 @@ Citizen.CreateThread(function()
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
 				TriggerEvent('skinchanger:loadSkin', skin)
 				end)
+			end
+
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('vehmenu') then
+
+			local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+
+			if WarMenu.Button('Ouvrir la porte gauche') then
+				SetVehicleDoorOpen(vehicle, 0, false, true)
+			end
+
+			if WarMenu.Button('Ouvrir la porte droite') then
+				SetVehicleDoorOpen(vehicle, 1, false, true)
+			end
+
+			if WarMenu.Button('Ouvrir la porte arrière gauche') then
+				SetVehicleDoorOpen(vehicle, 2, false, true)
+			end
+
+			if WarMenu.Button('Ouvrir la porte arrière droite') then
+				SetVehicleDoorOpen(vehicle, 3, false, true)
+			end
+
+			if WarMenu.Button('Ouvrir le capot') then
+				SetVehicleDoorOpen(vehicle, 4, false, true)
+			end
+
+			if WarMenu.Button('Ouvrir le coffre') then
+				SetVehicleDoorOpen(vehicle, 5, false, true)
+			end
+
+			if WarMenu.Button('Tout fermer') then
+				SetVehicleDoorShut(vehicle, 0, true)
+				SetVehicleDoorShut(vehicle, 1, true)
+				SetVehicleDoorShut(vehicle, 2, true)
+				SetVehicleDoorShut(vehicle, 3, true)
+				SetVehicleDoorShut(vehicle, 4, true)
+				SetVehicleDoorShut(vehicle, 5, true)
 			end
 
 			WarMenu.Display()
