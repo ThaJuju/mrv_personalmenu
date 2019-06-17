@@ -14,6 +14,12 @@ Citizen.CreateThread(function()
 
 	WarMenu.CreateSubMenu('vehmenu', 'personalmenu', 'Vehicule')
 
+	WarMenu.CreateSubMenu('vehmenu1', 'personalmenu', 'Ouverture')
+
+	WarMenu.CreateSubMenu('vehmenu2', 'personalmenu', 'Fermeture')
+
+	WarMenu.CreateSubMenu('colormenu', 'personalmenu', 'Menu Couleur')
+
 
 	WarMenu.CreateSubMenu('animmenu', 'personalmenu', 'Animations')
 
@@ -54,6 +60,15 @@ Citizen.CreateThread(function()
 
 	WarMenu.SetMenuBackgroundColor("vehmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("vehmenu", 251, 255, 0, 1000)
+
+	WarMenu.SetMenuBackgroundColor("vehmenu1", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 251, 255, 0, 1000)
+
+	WarMenu.SetMenuBackgroundColor("vehmenu2", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 251, 255, 0, 1000)
+
+	WarMenu.SetMenuBackgroundColor("colormenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("colormenu", 251, 255, 0, 1000)
 
 	WarMenu.SetMenuBackgroundColor("animmenu", 0, 0, 0, 200)
 	WarMenu.SetTitleBackgroundColor("animmenu", 251, 255, 0, 1000)
@@ -676,6 +691,9 @@ Citizen.CreateThread(function()
 				notification("Information", "Votre ~g~ID~s~: " ..id)
             end
 
+			if WarMenu.MenuButton('Couleur', 'colormenu') then
+			end
+
 			WarMenu.Display()
 
 		elseif WarMenu.IsMenuOpened('clothesmenu') then
@@ -700,7 +718,113 @@ Citizen.CreateThread(function()
 
 			WarMenu.Display()
 
+		elseif WarMenu.IsMenuOpened('colormenu') then
+
+	if WarMenu.Button('Rouge') then
+
+	notification("Option", "~g~Notification~s~", "Le ~r~rouge~s~ ? Quel belle couleur !")	
+	WarMenu.SetTitleBackgroundColor("personalmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("colormenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 255, 0, 0, 1000)
+	
+	elseif WarMenu.Button('Vert') then
+
+	notification("Option", "~g~Notification~s~", "Le ~g~vert~s~ ? Quel belle couleur !")
+	WarMenu.SetTitleBackgroundColor("personalmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 255, 0, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("colormenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 46, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 46, 255, 0, 1000)
+
+	elseif WarMenu.Button('Bleu') then
+		
+	notification("Option", "~g~Notification~s~", "Le ~b~bleu~s~ ? Quel belle couleur !")
+	WarMenu.SetTitleBackgroundColor("personalmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("colormenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 0, 174, 255, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 0, 174, 255, 1000)
+
+	elseif WarMenu.Button('Orange') then
+
+	notification("Option", "~g~Notification~s~", "Le ~o~orange~s~ ? Quel belle couleur !")
+	WarMenu.SetTitleBackgroundColor("personalmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("colormenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 255, 139, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 255, 139, 0, 1000)
+
+			end
+
+			WarMenu.Display()
+
 		elseif WarMenu.IsMenuOpened('vehmenu') then
+			
+			if WarMenu.MenuButton('Ouverture', 'vehmenu1') then
+			end
+			if WarMenu.MenuButton('Fermeture', 'vehmenu2') then
+			end
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('vehmenu1') then
 
 			local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 
@@ -728,6 +852,45 @@ Citizen.CreateThread(function()
 				SetVehicleDoorOpen(vehicle, 5, false, true)
 			end
 
+			if WarMenu.Button('Tout ouvrir') then
+				SetVehicleDoorOpen(vehicle, 0, false, true)
+				SetVehicleDoorOpen(vehicle, 1, false, true)
+				SetVehicleDoorOpen(vehicle, 2, false, true)
+				SetVehicleDoorOpen(vehicle, 3, false, true)
+				SetVehicleDoorOpen(vehicle, 4, false, true)
+				SetVehicleDoorOpen(vehicle, 5, false, true)
+			end
+
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('vehmenu2') then
+
+			local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+
+			if WarMenu.Button ('Fermer la porte gauche') then
+				SetVehicleDoorShut(vehicle, 0, true)
+			end
+
+			if WarMenu.Button ('Fermer la porte droite') then
+				SetVehicleDoorShut(vehicle, 1, true)
+			end
+
+			if WarMenu.Button ('Fermer la porte arrière gauche') then
+				SetVehicleDoorShut(vehicle, 2, true)
+			end
+
+			if WarMenu.Button ('Fermer la porte arrière droite') then
+				SetVehicleDoorShut(vehicle, 3, true)
+			end
+
+			if WarMenu.Button ('Fermer le capot') then
+				SetVehicleDoorShut(vehicle, 4, true)
+			end
+
+			if WarMenu.Button ('Fermer le coffre') then
+				SetVehicleDoorShut(vehicle, 5, true)
+			end
+			
 			if WarMenu.Button('Tout fermer') then
 				SetVehicleDoorShut(vehicle, 0, true)
 				SetVehicleDoorShut(vehicle, 1, true)
@@ -738,7 +901,6 @@ Citizen.CreateThread(function()
 			end
 
 			WarMenu.Display()
-
 		end
 
 		Citizen.Wait(0)
