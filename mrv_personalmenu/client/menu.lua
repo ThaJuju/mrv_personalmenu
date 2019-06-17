@@ -689,7 +689,7 @@ Citizen.CreateThread(function()
 			if WarMenu.Button('Mon ID') then
                 local id = GetPlayerServerId(player)
 				notification("Information", "Votre ~g~ID~s~: " ..id)
-            end
+			end
 
 			if WarMenu.MenuButton('Couleur', 'colormenu') then
 			end
@@ -817,11 +817,20 @@ Citizen.CreateThread(function()
 			WarMenu.Display()
 
 		elseif WarMenu.IsMenuOpened('vehmenu') then
+
+			local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 			
 			if WarMenu.MenuButton('Ouverture', 'vehmenu1') then
 			end
 			if WarMenu.MenuButton('Fermeture', 'vehmenu2') then
 			end
+			if WarMenu.Button('Eteindre les phares') then
+				SetVehicleLights(vehicle, 1)
+			end
+			if WarMenu.Button('Allumer les phares') then
+				SetVehicleLights(vehicle, 0)
+			end
+
 			WarMenu.Display()
 
 		elseif WarMenu.IsMenuOpened('vehmenu1') then
