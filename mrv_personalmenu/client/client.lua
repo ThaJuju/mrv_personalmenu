@@ -1,11 +1,5 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-    while ESX == nil do
-	TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-	Citizen.Wait(0)
-    end
-end)
+actualitem = {}
+billbouton = {}
 
 Citizen.CreateThread(function()
     while true do
@@ -76,15 +70,40 @@ function notification(title, subject, msg)
   
 	UnregisterPedheadshot(mugshot)
   
-  end
+end
+  
+function KeyboardInput(textEntry, inputText, maxLength)
+    AddTextEntry('FMMC_KEY_TIP1', textEntry)
+    DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP1", "", inputText, "", "", "", maxLength)
+    blockinput = true
 
-function IsInVehicle()
-	local ply = GetPlayerPed(-1)
-	if IsPedSittingInAnyVehicle(ply) then
-		return true
-	else
-		return false
-	end
+    while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do
+        Citizen.Wait(0)
+    end
+
+    if UpdateOnscreenKeyboard() ~= 2 then
+        local result = GetOnscreenKeyboardResult()
+        Citizen.Wait(500)
+        blockinput = false
+        return result
+    else
+        Citizen.Wait(500)
+        blockinput = false
+        return nil
+    end
+end
+
+function jeter()
+    local quantity = KeyboardInput("Montant", "", 7)
+    if quantity ~= nil then
+        ESX.ShowNotification('Montant ~r~invalide')
+        quantity = tonumber(quantity)
+
+        if type(quantity) == 'number' then
+            quantity = ESX.Math.Round(quantity)
+            TriggerServerEvent('esx:removeInventoryItem', 'item_standard', actualitem.value, quantity)
+        end
+    end
 end
 
 -- Fin fonctions 
