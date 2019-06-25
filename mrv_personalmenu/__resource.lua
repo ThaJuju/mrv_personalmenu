@@ -7,7 +7,11 @@ client_scripts {
     'config/config.lua'
 }
 
+server_scripts {
+    '@mysql-async/lib/MySQL.lua',
+    'server/server.lua'
+}
+
 dependencies {
-    'warmenu',
-    'jsfour-idcard'
+    'warmenu'
 }
