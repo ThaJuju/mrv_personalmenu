@@ -1,8 +1,31 @@
+ESX = nil
+
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(10)      
+    end
+
+    while ESX.GetPlayerData() == nil do
+		Citizen.Wait(10)
+	end
+
+	while GetPlayerName(player) == nil do
+		Citizen.Wait(10)
+	end
+end)
+
 Citizen.CreateThread(function()
 
 	WarMenu.CreateMenu('personalmenu', '' .. GetPlayerName(player))
 	
 	WarMenu.CreateSubMenu('papersmenu', 'personalmenu', 'Mes papiers')
+
+	WarMenu.CreateSubMenu('inventorymenu', 'personalmenu', 'Inventaire')
+
+	WarMenu.CreateSubMenu('inventoryaction', 'inventorymenu', 'Action inventaire')
+
+	WarMenu.CreateSubMenu('billingmenu', 'personalmenu', 'Mes factures')
 	
 	WarMenu.CreateSubMenu('gpsmenu', 'personalmenu', 'Mini GPS')
 
@@ -41,61 +64,69 @@ Citizen.CreateThread(function()
 
 
 	WarMenu.SetMenuBackgroundColor("personalmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("personalmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("personalmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("papersmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("papersmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("papersmenu", 129, 250, 0, 150)
+
+	WarMenu.SetMenuBackgroundColor("inventorymenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("inventorymenu", 129, 250, 0, 150)
+
+	WarMenu.SetMenuBackgroundColor("inventoryaction", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("inventoryaction", 129, 250, 0, 150)
+	WarMenu.SetMenuBackgroundColor("billingmenu", 0, 0, 0, 200)
+	WarMenu.SetTitleBackgroundColor("billingmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("gpsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("gpsmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("gpsmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("optionsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("optionsmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("optionsmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("diversmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("diversmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("diversmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("clothesmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("clothesmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("clothesmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("vehmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("vehmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("vehmenu1", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("vehmenu1", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu1", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("vehmenu2", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("vehmenu2", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("vehmenu2", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("colormenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("colormenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("colormenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("animmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("animmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("animmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("festivesmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("festivesmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("festivesmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("salutationmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("salutationmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("salutationmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("workmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("workmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("workmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("humorsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("humorsmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("humorsmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("sportsmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("sportsmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("sportsmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("miscmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("miscmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("miscmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("attitudemmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("attitudemmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("attitudemmenu", 129, 250, 0, 150)
 
 	WarMenu.SetMenuBackgroundColor("pornmenu", 0, 0, 0, 200)
-	WarMenu.SetTitleBackgroundColor("pornmenu", 251, 255, 0, 1000)
+	WarMenu.SetTitleBackgroundColor("pornmenu", 129, 250, 0, 150)
 
 	WarMenu.SetSubTitle("personalmenu", "Menu Personnel")
 
@@ -104,6 +135,10 @@ Citizen.CreateThread(function()
 		if WarMenu.IsMenuOpened('personalmenu') then
 		
 			if WarMenu.MenuButton('Mes papiers', 'papersmenu') then
+			end
+			if WarMenu.MenuButton('Inventaire', 'inventorymenu') then
+			end
+			if WarMenu.MenuButton('Mes factures', 'billingmenu') then
 			end
 			if WarMenu.MenuButton('Mes vêtements', 'clothesmenu') then
 			end
@@ -908,7 +943,96 @@ Citizen.CreateThread(function()
 				SetVehicleDoorShut(vehicle, 4, true)
 				SetVehicleDoorShut(vehicle, 5, true)
 			end
+			
+			WarMenu.Display()
 
+		elseif WarMenu.IsMenuOpened('inventorymenu') then
+
+			ESX.PlayerData = ESX.GetPlayerData()
+			
+			for i=1, #ESX.PlayerData.inventory, 1 do
+                if ESX.PlayerData.inventory[i].count > 0 then
+                    local label	    = ESX.PlayerData.inventory[i].label
+                    local count	    = ESX.PlayerData.inventory[i].count
+                    local value	    = ESX.PlayerData.inventory[i].name
+                    local usable	= ESX.PlayerData.inventory[i].usable
+                    local rare	    = ESX.PlayerData.inventory[i].rare
+                    local canRemove = ESX.PlayerData.inventory[i].canRemove
+                    
+                    if WarMenu.Button(label .." : ~g~"..count) then
+                        WarMenu.OpenMenu('inventoryaction')
+                        actualitem.value = value
+                        actualitem.label = label
+                        actualitem.count = count
+                        actualitem.usable = usable
+                        actualitem.canRemove = canRemove
+                    end
+                end
+			end
+			
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('inventoryaction') then
+
+			if WarMenu.Button('Utiliser') then
+                if actualitem.usable then
+                TriggerServerEvent('esx:useItem', actualitem.value)
+                else
+                    ESX.ShowAdvancedNotification("Inventaire", "Erreur", actualitem.label.. " n'est ~r~pas utilisable", "CHAR_MULTIPLAYER", 2)
+                end
+            end
+            if WarMenu.Button('Donner') then
+                local foundPlayers = false
+                        local closestPlayer, distance = ESX.Game.GetClosestPlayer()
+
+                        if distance ~= -1 and distance <= 3 then
+                             foundPlayers = true
+                        end
+
+                        if foundPlayers == true then
+                            local closestPed = GetPlayerPed(closestPlayer)
+
+                            if not IsPedSittingInAnyVehicle(closestPed) then
+                                if actualitem.quantity ~= nil and actualitem.count > 0 then
+                                    TriggerServerEvent('esx:giveInventoryItem', GetPlayerServerId(closestPlayer), 'item_standard', actualitem.value, actualitem.quantity)
+                                else
+                                    ESX.ShowAdvancedNotification("Inventaire", "Erreur", "Montant ~r~Invalide", "CHAR_MULTIPLAYER", 2)
+                                end
+                            else
+                                ESX.ShowNotification("Impossible de donner " .. actualitem.label .. " dans un véhicule")
+                            end
+                        else
+                            ESX.ShowNotification("~r~Aucun~s~ citoyen à proximité")
+                        end
+            end
+            if WarMenu.Button('Jeter') then
+                jeter()
+			end
+
+			WarMenu.Display()
+
+		elseif WarMenu.IsMenuOpened('billingmenu') then
+
+			ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
+				billbouton = bills
+			end)
+
+			for i=1, #billbouton, 1 do
+							
+				local label  = billbouton[i].label 
+				local billID = billbouton[i].id
+
+				if WarMenu.Button(label.. " : ~g~"..billbouton[i].amount) then
+					
+					ESX.TriggerServerCallback('esx_billing:payBill', function()
+					end, billID)
+					Citizen.Wait(100)
+					ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
+						billbouton = bills
+					end)
+				end
+		end
+			
 			WarMenu.Display()
 		end
 
