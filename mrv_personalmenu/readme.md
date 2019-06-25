@@ -12,6 +12,10 @@ MRV#0001
 
 - Menu personnel avec différentes choses, vous pouvez regarder vos papiers d'identité (permis de conduire, permis de port d'arme et carte d'identité). 
 
+- Inventaire avec un style différent de celui de base
+
+- Factures
+
 - Vous pouvez également les montrer.
 
 - Un GPS est inclus dedans avec différentes destinations.
@@ -37,6 +41,10 @@ MRV#0001
 - Key for open the menu : (,)
 
 - Personal menu with different things, you can see your identity papers (driver's license, firearms license and ID card).
+
+- Inventory with a different style than the basic one
+
+- Bills
 
 - You can also show them.
 
