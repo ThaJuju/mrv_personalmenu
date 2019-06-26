@@ -126,7 +126,7 @@ RegisterNetEvent('mrv_personalmenu:removepants')
 AddEventHandler('mrv_personalmenu:removepants', function()
 	TriggerEvent('skinchanger:getSkin', function(skin)
 
-		if GetEntityModel(GetPlayerPed(-1)) == 1885233650 then -- homme
+		if skin.sex == 0 then
 	
     local clothesSkin = {
 		['pants_1'] = 18, ['pants_2'] = 0
@@ -145,7 +145,7 @@ RegisterNetEvent('mrv_personalmenu:removeshoes')
 AddEventHandler('mrv_personalmenu:removeshoes', function()
 	TriggerEvent('skinchanger:getSkin', function(skin)
 
-		if GetEntityModel(GetPlayerPed(-1)) == 1885233650 then -- homme
+		if skin.sex == 0 then
 					
     local clothesSkin = {
 		['shoes_1'] = 34, ['shoes_2'] = 0
